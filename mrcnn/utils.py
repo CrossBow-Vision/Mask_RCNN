@@ -130,7 +130,7 @@ def compute_overlaps(boxes1, boxes2):
     overlaps = np.zeros((boxes1.shape[0], boxes2.shape[0]))
     for i in range(overlaps.shape[1]):
         box2 = boxes2[i]
-        overlaps[:, i] = compute_iou(box2, boxes1, area2[i], area1)
+        overlaps[:, i] = compute_iou(box2, boxes1, area2[i], area1)   # computes overlap of boxes1 with given box2
     return overlaps
 
 
