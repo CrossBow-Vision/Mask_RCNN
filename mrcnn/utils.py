@@ -79,6 +79,10 @@ def extract_bboxes(mask):
     return boxes.astype(np.int32)
 
 
+
+"""
+easy to follow 
+"""
 def compute_iou(box, boxes, box_area, boxes_area):
     """Calculates IoU of the given box with the array of the given boxes.
     box: 1D vector [y1, x1, y2, x2]
@@ -100,6 +104,13 @@ def compute_iou(box, boxes, box_area, boxes_area):
     return iou
 
 
+"""
+boxes1 = np.array([[2,3,7,10]])
+boxes2 = np.array([[3,4,7,10]])
+
+compute_overlaps(boxes1, boxes2)
+"""
+
 def compute_overlaps(boxes1, boxes2):
     """Computes IoU overlaps between two sets of boxes.
     boxes1, boxes2: [N, (y1, x1, y2, x2)].
@@ -108,7 +119,9 @@ def compute_overlaps(boxes1, boxes2):
     """
     # Areas of anchors and GT boxes
     area1 = (boxes1[:, 2] - boxes1[:, 0]) * (boxes1[:, 3] - boxes1[:, 1])
+    print(area1)
     area2 = (boxes2[:, 2] - boxes2[:, 0]) * (boxes2[:, 3] - boxes2[:, 1])
+    print(area2)
 
     # Compute overlaps to generate matrix [boxes1 count, boxes2 count]
     # Each cell contains the IoU value.
