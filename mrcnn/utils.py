@@ -105,7 +105,9 @@ def compute_iou(box, boxes, box_area, boxes_area):
 
 
 """
-boxes1 = np.array([[2,3,7,10]])
+keeping N = 1 for simplicity :
+
+boxes1 = np.array([[2,3,7,10]])  
 boxes2 = np.array([[3,4,7,10]])
 
 compute_overlaps(boxes1, boxes2)
