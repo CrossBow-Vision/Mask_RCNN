@@ -52,6 +52,8 @@ class Config(object):
     # You can also provide a callable that should have the signature
     # of model.resnet_graph. If you do so, you need to supply a callable
     # to COMPUTE_BACKBONE_SHAPE as well
+    # LOOK AT MOBILE_MASK_RCNN GITHUB REPO.
+    
     BACKBONE = "resnet101"
 
     # Only useful if you supply a callable to BACKBONE. Should compute
@@ -61,6 +63,7 @@ class Config(object):
 
     # The strides of each layer of the FPN Pyramid. These values
     # are based on a Resnet101 backbone.
+    # SEE FPN VIDEO AND SEE MOBILE_MASK_RCNN GITHUB REPO WHERE HE MUST HAVE CHANGED THE THIS ALSO
     BACKBONE_STRIDES = [4, 8, 16, 32, 64]
 
     # Size of the fully-connected layers in the classification graph
